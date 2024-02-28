@@ -16,7 +16,7 @@ import ca.sheridancollege.vasam.ticketsdatabase.TicketsDatabase;
 		
 		@GetMapping("/")
 		public String goToRootPage() {
-		return "rootPage.html";
+		return "index.html";
 		}
 		
 		@GetMapping("/addPage")
