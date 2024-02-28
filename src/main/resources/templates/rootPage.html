@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Root Page</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #EEEDE7;
+            height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            background-color: #d43255;
+            height: 20vh;
+            text-align: center;
+            padding-top: 25px;
+            font-size: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+			font-weight: 500;
+			text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        #container1 {
+            margin-top: 15vh;
+            margin-bottom: 5vh;
+            margin-left: 2%;
+            background-color: #2d7e80;
+            width: 70%;
+            height: 80vh;
+            padding: 25px;
+            border: 0px solid black;
+            border-radius: 15px;
+        }
+
+		#box1 {
+			width: 45%;
+			border-radius: 5%;
+        }
+
+		#box1 img{
+			/* padding-bottom: 0%; */
+        }
+
+		#container1 #box2 aside{
+            text-align: center;
+        }
+
+        #box2 #buttons a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        #box2 #buttons a:hover {
+            color: #A7099E;
+        }
+
+        #box2 {
+            margin-top: 8vh;
+            height: 65vh;
+            float: right;
+            width: 45%;
+            border-radius: 15px;
+            padding: 25px;
+            background-color: #da8e92;
+            font-size: 25px;
+            font-weight: 500;
+            color: rgb(0, 0, 0);
+        }
+
+        #buttons {
+            padding-top: 5vh;
+            display: flex;
+            justify-content: space-around;
+            font-size: 25px;
+        }
+
+        #description {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 12vh;
+            text-align: center;
+            font-size: 25px;
+			font-weight: 500;
+            line-height: 2;
+            width: 50%;
+        }
+
+        #container2 {
+            margin-top: 15vh;
+            margin-left: 2%;
+            margin-right: 2%;
+            height: 95vh;
+            padding: 25px;
+            border: 0px solid black;
+            border-radius: 15px;
+        }
+
+        #trackcontent {
+            height: 90vh;
+            width: 35%;
+            border-radius: 15px;
+            padding: 25px;
+            font-size: 25px;
+            font-weight: 500;
+            color: rgb(0, 0, 0);
+            padding-top: 35vh;
+        }
+
+        #tracks {
+            height: 90vh;
+            float: right;
+            width: 50%;
+            border-radius: 15px;
+            padding: 25px;
+            background-color: #1AA64B;
+            font-size: 25px;
+            font-weight: 500;
+            color: rgb(0, 0, 0);
+        }
+
+        #tracks aside {
+            text-align: center;
+        }
+
+        #tracks aside img {
+            border-radius: 25px;
+        }
+
+        /*#container3 {
+            margin-top: 15vh;
+            margin-left: 10%;
+            margin-right: 10%;
+            background-color: #2d7e80;
+            height: 95vh;
+            padding: 25px;
+            border-radius: 15px;
+            
+        }*/
+
+        /* #column {
+            flex: 0 0 20%; 
+            margin-bottom: 20px; 
+        }
+
+        #column img {
+            width: 100%;
+            border-radius: 8px;
+        } */
+
+        footer {
+            display: flex;
+            justify-content: space-around;
+            padding: 25px;
+            font-size: 25px;
+            clear: both;
+            margin-top: 20%;
+        }
+
+        footer .title {
+            padding-bottom: 25px;
+            font-size: 45px;
+			font-weight: 500;
+        }
+
+        footer div p {
+            padding: 5px;
+            font-size: 20px;
+			font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>Vocal Beatz</header>
+
+    <div id="description">
+        <h1>Hello!</h1>
+        <p>Welcome to the live concert where the magic of music comes alive, and together, we embark on an unforgettable
+            journey of sound and emotion!</p>
+        <h2>Anirudh Live!</h2>
+    </div>
+
+    <main id="container1">
+
+        <div id="box2">
+            <aside>Anirudh Ravichander Tickets</aside>
+
+            <div id="buttons">
+                <div id="addButton"> <a href="/addPage">Buy Tickets</a> </div>
+                <div id="viewButton"> <a href="/viewPage">View Tickets</a> </div>
+            </div>
+
+        </div>
+
+        <div id="box1"> <img th:src="@{/img/anirudh.png}" width=600 height=700> </div>
+
+    </main>
+
+    <div id="container2">
+
+        <div id="tracks">
+            <aside> <img th:src="@{/img/ani.png}" width=300 height=375> </aside>
+        </div>
+
+        <div id="trackcontent">
+            <p>Welcome to the live concert where the magic of music comes alive, and together, we embark on an unforgettable journey of sound and emotion!</p>
+        </div>
+
+    </div>
+
+    <!-- <div id="container3">
+		
+		<div id="column">
+			<img th:src="@{/img/ani.png}">
+			<img th:src="@{/img/ani.png}">
+			<img th:src="@{/img/ani.png}">
+			<img th:src="@{/img/ani.png}">
+			<img th:src="@{/img/ani.png}">
+			<img th:src="@{/img/ani.png}">
+			<img th:src="@{/img/ani.png}">
+			<img th:src="@{/img/ani.png}">
+		</div>
+		
+    </div> -->
+
+    <footer>
+        <div>
+            <p class="title">Contact Information</p>
+            <p>Mail: info@example.com</p>
+            <p>Phone: (123) 456-7890</p>
+            <p>123 Concert Street, Cityville</p>
+        </div>
+
+        <div>
+            <p class="title">Event Details</p>
+            <p>Date & Time: January 31, 2024, 7:00 PM</p>
+            <p>Venue: Harmony Hall, 456 Music Avenue, Cityville</p>
+        </div>
+
+        <div>
+            <p class="title">Connect with the Artists</p>
+            <p>Date & Time: January 31, 2024, 7:00 PM</p>
+            <p>Venue: Harmony Hall, 456 Music Avenue, Cityville</p>
+        </div>
+
+        <div>
+            <p class="title">Connect with Us</p>
+            <p> Facebook</p>
+            <p> Twitter</p>
+            <p> Instagram</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

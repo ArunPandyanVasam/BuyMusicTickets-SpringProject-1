@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Tickets</title>
+    
+    <style>
+	    *{
+	         	margin:0;
+	         	padding:0;
+	         	box-sizing:border-box;
+	    }
+	        
+	    body{
+	         	background-color: #FBE7C6;
+	    }
+	        
+    	header {
+            width: 100%;
+            background-color: #d43255;
+            height: 20vh;
+            text-align: center;
+            padding-top: 25px;
+            font-size: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+			font-weight: 500;
+        }
+		
+		.container {
+			width:80%;
+			max-width:800px;
+			padding:15px;
+			font-size:25px;
+			margin:150px auto 0;
+			background-color:#FAE8E0;
+		}
+		
+		table {
+			width:100%;
+			border-collapse:collapse;
+		}
+		
+		.back {
+			width:100px;
+			font-size:25px;
+			margin-left: 150px;
+			margin-bottom: 20px;
+			padding:25px;
+			border:2px solid black;
+			background-color:#EEEDE7;
+		}
+		
+		footer {
+            display: flex;
+            justify-content: space-around;
+            padding: 25px;
+            font-size: 25px;
+            clear: both;
+            margin-top: 20%;
+        }
+
+        footer .title {
+            padding-bottom: 25px;
+            font-size: 45px;
+			font-weight: 500;
+        }
+
+        footer div p {
+            padding: 5px;
+            font-size: 20px;
+			font-weight: 500;
+        }
+
+    </style>
+
+</head>
+<body>
+	<header>Vocal Beatz</header>
+
+	<div class="container">
+		<table border="1">
+			<tr>
+				<th>Name</th>
+				<th>Gender</th>
+				<th>Age</th>
+				<th>Date</th>
+				<th>No of Tickets</th>
+				<th>Total Price</th>
+			</tr>
+
+			<tr th:each="game: ${woof}">
+				<td th:text="${game.name}"></td>
+				<td th:text="${game.gender}"></td>
+				<td th:text="${game.age}"></td>
+				<td th:text="${game.date}"></td>
+				<td th:text="${game.noOfTickets}"></td>
+				<td th:text="${game.totalPrice}"></td>
+			</tr>
+		</table>
+    </div>
+
+	<div class="back"> <a href="/">Back</a> </div>
+
+	<footer>
+        <div>
+            <p class="title">Contact Information</p>
+            <p>Mail: info@example.com</p>
+            <p>Phone: (123) 456-7890</p>
+            <p>123 Concert Street, Cityville</p>
+        </div>
+
+        <div>
+            <p class="title">Event Details</p>
+            <p>Date & Time: January 31, 2024, 7:00 PM</p>
+            <p>Venue: Harmony Hall, 456 Music Avenue, Cityville</p>
+        </div>
+
+        <div>
+            <p class="title">Connect with the Artists</p>
+            <p>Date & Time: January 31, 2024, 7:00 PM</p>
+            <p>Venue: Harmony Hall, 456 Music Avenue, Cityville</p>
+        </div>
+
+        <div>
+            <p class="title">Connect with Us</p>
+            <p> Facebook</p>
+            <p> Twitter</p>
+            <p> Instagram</p>
+        </div>
+    </footer>
+
+</body>
+</html>
